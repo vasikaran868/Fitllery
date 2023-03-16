@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Fragments.ListingFrag"
+    android:background="@drawable/app_name_lay_bg_gradient">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="206dp"
+            android:fitsSystemWindows="true"
+            android:background="#00000000"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/app_name_lay"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_collapseMode="parallax">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fitllery"
+                    android:textColor="@color/white"
+                    android:textSize="42sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginBottom="@dimen/_12sdp"/>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!--            <androidx.appcompat.widget.Toolbar-->
+<!--                android:id="@+id/anim_toolbar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="?attr/actionBarSize"-->
+<!--                android:minHeight="?attr/actionBarSize"-->
+<!--                app:layout_scrollFlags="scroll|enterAlways"-->
+<!--                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />-->
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+<!--        <com.google.android.material.tabs.TabLayout-->
+<!--            android:id="@+id/tabs"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="bottom"-->
+<!--            app:tabGravity="fill"-->
+<!--            app:tabMode="scrollable" />-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/search_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/app_name_lay"
+            android:background="@drawable/image_card_bg"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:backgroundTint="@color/white">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/search_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/search_hint_lay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_bias=".45"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:srcCompat="@drawable/search_vector"
+                    app:layout_constraintEnd_toStartOf="@id/textView2"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Search Images"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/search_text_color"
+                    android:layout_marginVertical="@dimen/_3sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="Your Albums"
+                app:fontFamily="@font/rubik_font"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/your_album_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/_111sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/albums_recview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/album_duplicate_shimmer_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <include layout="@layout/album_viewholder"/>
+
+                    <include layout="@layout/album_viewholder"/>
+
+                </LinearLayout>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <TextView
+                android:id="@+id/albumid_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="Your Albums"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/your_album_lay" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/albumid_tv">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listing_recview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <LinearLayout
+                    android:id="@+id/images_duplicate_shimmer_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <include layout="@layout/image_viewholder"/>
+
+                        <include layout="@layout/image_viewholder"/>
+
+                        <include layout="@layout/image_viewholder"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <include layout="@layout/image_viewholder"/>
+
+                        <include layout="@layout/image_viewholder"/>
+
+                        <include layout="@layout/image_viewholder"/>
+
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

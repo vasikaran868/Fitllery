@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/images_nav_graph"
+    app:startDestination="@id/listingFrag">
+
+    <fragment
+        android:id="@+id/listingFrag"
+        android:name="com.example.fitpeoassignment.ui.Fragments.ListingFrag"
+        android:label="fragment_listing"
+        tools:layout="@layout/fragment_listing" >
+        <action
+            android:id="@+id/action_listingFrag_to_imageFrag"
+            app:destination="@id/imageFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageFrag"
+        android:name="com.example.fitpeoassignment.ui.Fragments.ImageFrag"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" >
+        <argument
+            android:name="transitionName"
+            app:argType="string" />
+        <argument
+            android:name="imageData"
+            app:argType="com.example.fitpeoassignment.ui.ImageData" />
+    </fragment>
+</navigation>
